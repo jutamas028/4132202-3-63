@@ -6,7 +6,7 @@ services:
         ports: 
             - 8000:80
         volumes: 
-            - ./www:var/www/html
+            - ./www:/var/www/html
         networks: 
             - default
         links: 
@@ -20,4 +20,10 @@ services:
             MYSQL_ROOT_PASSWORD: test
         networks: 
             - default
+    myadmin:
+        image: phpmyadmin/phpmyadmin
+        ports: 
+             - 8100:80
+        links: 
+             - db:db
   
